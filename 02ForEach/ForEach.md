@@ -35,7 +35,6 @@ class CollectionTest extends TestCase
 +        
 +        foreach ($toCollection as $key => $value) {
 +            self::assertEquals($key + 1, $value);
-+            echo $key, $value;
 +        }
 +    }
 }```
