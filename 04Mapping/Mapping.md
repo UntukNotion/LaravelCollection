@@ -6,6 +6,8 @@ Mapping membutuhkan function sebagai parameter yang digunakan untuk membentuk da
 
 Urutan Collection hasil mapping adalah sama dengan urutan collection aslinya
 
+# Mapping Operations
+
 | Method | Keterangan |
 | --- | --- |
 | map(function) | Iterasi seluruh data, dan mengirim seluruh data ke function |
