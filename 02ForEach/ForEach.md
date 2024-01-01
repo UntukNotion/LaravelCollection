@@ -37,4 +37,5 @@ class CollectionTest extends TestCase
 +            self::assertEquals($key + 1, $value);
 +        }
 +    }
-}```
+}
+```
