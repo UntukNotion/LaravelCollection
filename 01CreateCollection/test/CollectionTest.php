@@ -19,6 +19,10 @@ class CollectionTest extends TestCase
         // Membuat/menguabh collection menjadi array
         $toArray = $toCollection->all();
 
+        // unit test ini nilai dan urutannya harus sama
         self::assertEquals([1, 2, 3], $toArray);
+
+        // unit test ini tidak peduli dengan index, yang penting nilainya harus sama
+        self::assertEqualsCanonicalizing([2, 1, 3], $toArray);
     }
 }
