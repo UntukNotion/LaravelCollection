@@ -1,0 +1,46 @@
+## CollectionTest.php
+```diff
+class CollectionTest extends TestCase
+{
+-     /**
+-     * @test
+-     */
+-    public function collectionManipulation(): void
+-    {
+-        // membuat collection dari array kosong
+-        $collection = collect([]);
+-
+-        // menambah data menggunakan push()
+-        $collection->push(1, 2, 3);
+-
+-        // mengubah collection menjadi array
+-        $toArray = $collection->all();
+-
+-        self::assertEqualsCanonicalizing([1, 2, 3], $toArray);
+-
+-        // menghapus nilai paling akhir
+-        $toArray = $collection->pop();
+-
+-        self::assertEquals(3, $toArray);
+-        self::assertEqualsCanonicalizing([1, 2], $collection->all());
+-    }
+
++    /**
++     * @test
++     */
++    public function mapSpread(): void
++    {
++        $collection = collect([["Rifky", "Muhamad"], ["Dyone", "Strankers"]]);
++
++        $result = $collection->mapSpread(function ($firstName, $lastName) {
++            $fullName = $firstName . " " . $lastName;
++            return new Person($fullName);
++        });
++
++        self::assertEquals([
++            new Person("Rifky Muhamad"),
++            new Person("Dyone Strankers")
++        ], $result->all());
++    }
+}
+```
